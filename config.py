@@ -11,7 +11,7 @@ BRAIN_CONFIG = {
         "core_teams": [
             "Hornets", "Magic", "Nuggets",
             "Thunder", "Clippers", "Heat", "Knicks"
-        ]
+        
     },
 
     # --- Betting Rules ---
