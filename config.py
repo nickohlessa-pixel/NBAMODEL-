@@ -9,9 +9,14 @@ BRAIN_CONFIG = {
         "user_is_truth": True,
         "roster_engine": "Option_A_AutoSave",
         "core_teams": [
-            "Hornets", "Magic", "Nuggets",
-            "Thunder", "Clippers", "Heat", "Knicks"
-        
+            "Hornets",
+            "Magic",
+            "Nuggets",
+            "Thunder",
+            "Clippers",
+            "Heat",
+            "Knicks"
+        ]
     },
 
     # --- Betting Rules ---
@@ -38,7 +43,7 @@ BRAIN_CONFIG = {
         "Hornets": {
             "strength": 40,
             "identity": {
-                "offense": "elite paint and PnR scoring, bad 3PT shooting, high variance",
+                "offense": "elite paint scoring, PnR-heavy, good floaters, terrible 3pt shooting",
                 "defense": "poor POA, bad vs shooters and movement, weak PnR defense",
                 "pace": "fast",
                 "variance": "high",
@@ -66,3 +71,4 @@ BRAIN_CONFIG = {
 }
 
 # END OF CONFIG
+
