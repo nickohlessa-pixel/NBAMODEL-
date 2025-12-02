@@ -9,9 +9,11 @@ BRAIN_CONFIG = {
     "universe_rules": {
         "user_is_truth": True,
         "roster_engine": "Option_A_AutoSave",
-        "core_teams": [
-            "Hornets", "Magic", "Nuggets",
-            "Thunder", "Clippers", "Heat", "Knicks"
+      "core_teams": [
+    "Hornets", "Magic", "Nuggets",
+    "Thunder", "Clippers", "Heat", "Knicks"
+]
+
         ]
     },
 
