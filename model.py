@@ -4,15 +4,23 @@
 
 from config import BRAIN_CONFIG
 
+def get_team_profile(team_name: str) -> dict:
+    """
+    Return the full team profile dictionary from BRAIN_CONFIG.
+    For now this will mostly just be {"strength": X}, but later
+    it will hold the full V3.2 team identity pack.
+    """
+    teams = BRAIN_CONFIG.get("teams", {})
+    return teams.get(team_name, {})
+
+
 def get_team_strength(team_name: str) -> int:
     """
     Look up the dummy strength rating for a team from BRAIN_CONFIG.
     If the team is not found, default to 50.
     """
-    teams = BRAIN_CONFIG["teams"]
-    team_info = teams.get(team_name, {})
+    team_info = get_team_profile(team_name)
     return team_info.get("strength", 50)
-
 
 
 def run_matchup(team_a, team_b, spread, total):
@@ -21,7 +29,8 @@ def run_matchup(team_a, team_b, spread, total):
     - Prints matchup info
     - Looks up team strength for each team
     - Prints which team is stronger on paper
-    - Gives a DUMMY lean (no real edge logic yet)
+    - Also prints the full team profiles (for debugging)
+    - Still NO real edge logic yet
     """
 
     print("=== NBA MODEL BRAIN V3.2 ===")
@@ -45,6 +54,14 @@ def run_matchup(team_a, team_b, spread, total):
         stronger_team = "Equal (push)"
 
     print(f"\nOn raw strength numbers, stronger team: {stronger_team}")
+
+    # Show the raw team profiles (this will matter once we add real packs)
+    profile_a = get_team_profile(team_a)
+    profile_b = get_team_profile(team_b)
+
+    print("\nFull team profiles (debug):")
+    print(f"{team_a}: {profile_a}")
+    print(f"{team_b}: {profile_b}")
 
     print("\nCore teams:", BRAIN_CONFIG["universe_rules"]["core_teams"])
     print("Filters active:", BRAIN_CONFIG["filters"])
