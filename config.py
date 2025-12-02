@@ -38,14 +38,31 @@ BRAIN_CONFIG = {
     },
 
     # --- Team Profiles (empty for now) ---
+        # --- Team Profiles (dummy strength ratings for now) ---
     "teams": {
-        "Hornets": {},
-        "Magic": {},
-        "Nuggets": {},
-        "Thunder": {},
-        "Clippers": {},
-        "Hawks": {},
-        "Knicks": {}
+        "Hornets": {
+            "strength": 40
+        },
+        "Magic": {
+            "strength": 70
+        },
+        "Nuggets": {
+            "strength": 90
+        },
+        "Thunder": {
+            "strength": 80
+        },
+        "Clippers": {
+            "strength": 75
+        },
+        "Hawks": {
+            "strength": 65
+        },
+        "Knicks": {
+            "strength": 72
+        }
+    },
+
     },
 
     # --- Guardrails ---
