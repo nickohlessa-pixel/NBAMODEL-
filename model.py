@@ -49,3 +49,10 @@ def run_matchup(team_a, team_b, spread, total):
     print("\nCore teams:", BRAIN_CONFIG["universe_rules"]["core_teams"])
     print("Filters active:", BRAIN_CONFIG["filters"])
     print("\nNOTE: This is still a dummy model. No real edge math yet.")
+
+
+def get_team_profile(team_name: str):
+    """Return the full team profile dictionary (not just strength)."""
+    teams = BRAIN_CONFIG["teams"]
+    return teams.get(team_name, {})
+
