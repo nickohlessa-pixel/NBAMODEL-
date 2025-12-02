@@ -1,3 +1,4 @@
+%%writefile config.py
 # ==========================================
 # NBA MODEL BRAIN V3.2 - CONFIG SKELETON
 # ==========================================
@@ -71,4 +72,3 @@ BRAIN_CONFIG = {
 }
 
 # END OF CONFIG
-
