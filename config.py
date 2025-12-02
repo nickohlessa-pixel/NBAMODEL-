@@ -5,7 +5,7 @@
 
 BRAIN_CONFIG = {
 
-     # --- Universe Rules ---
+    # --- Universe Rules ---
     "universe_rules": {
         "user_is_truth": True,
         "roster_engine": "Option_A_AutoSave",
@@ -14,7 +14,6 @@ BRAIN_CONFIG = {
             "Thunder", "Clippers", "Heat", "Knicks"
         ]
     },
-
 
     # --- Betting Rules ---
     "betting": {
@@ -37,8 +36,8 @@ BRAIN_CONFIG = {
 
     # --- Team Profiles (dummy strength ratings) ---
     "teams": {
-     
-                "Hornets": {
+
+        "Hornets": {
             "strength": 40,
             "identity": {
                 "offense": "elite paint and PnR scoring, bad 3PT shooting, high variance",
@@ -53,13 +52,12 @@ BRAIN_CONFIG = {
             }
         },
 
-        
-        "Magic": {"strength": 70},
+        "Magic":   {"strength": 70},
         "Nuggets": {"strength": 90},
         "Thunder": {"strength": 80},
-        "Clippers": {"strength": 75},
-        "Heat": {"strength": 50},
-        "Knicks": {"strength": 72}
+        "Clippers":{"strength": 75},
+        "Heat":    {"strength": 65},
+        "Knicks":  {"strength": 72}
     },
 
     # --- Guardrails ---
