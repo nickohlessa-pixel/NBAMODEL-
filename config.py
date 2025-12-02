@@ -5,7 +5,7 @@
 
 BRAIN_CONFIG = {
 
-    # --- Universe Rules ---
+     # --- Universe Rules ---
     "universe_rules": {
         "user_is_truth": True,
         "roster_engine": "Option_A_AutoSave",
@@ -14,6 +14,7 @@ BRAIN_CONFIG = {
             "Thunder", "Clippers", "Heat", "Knicks"
         ]
     },
+
 
     # --- Betting Rules ---
     "betting": {
