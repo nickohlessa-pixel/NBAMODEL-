@@ -1,1 +1,58 @@
-# Placeholder for NBA Model Brain V3.2 configuration
+# ==========================================
+# NBA MODEL BRAIN V3.2 - CONFIG SKELETON
+# ==========================================
+
+# This file stores the model’s rules, identity tags,
+# team profiles, guardrails, and any user-defined logic.
+# For now, this is just the empty structure.
+
+BRAIN_CONFIG = {
+
+    # --- Universe Rules ---
+    "universe_rules": {
+        "user_is_truth": True,
+        "roster_engine": "Option_A_AutoSave",
+        "core_teams": [
+            "Hornets", "Magic", "Nuggets",
+            "Thunder", "Clippers", "Hawks", "Knicks"
+        ]
+    },
+
+    # --- Betting Rules ---
+    "betting": {
+        "unit_system": "1U_default",
+        "allow_props": False,      # Props come later
+        "high_conviction_only": True,
+        "require_min_edge": True
+    },
+
+    # --- Filters (7-filter system) ---
+    "filters": {
+        "info_certainty": True,
+        "trend_confirmation": True,
+        "matchup_logic": True,
+        "line_value_required": True,
+        "no_emotion": True,
+        "variance_filter": True,
+        "anti_ass_blast": True
+    },
+
+    # --- Team Profiles (empty for now) ---
+    "teams": {
+        "Hornets": {},
+        "Magic": {},
+        "Nuggets": {},
+        "Thunder": {},
+        "Clippers": {},
+        "Hawks": {},
+        "Knicks": {}
+    },
+
+    # --- Guardrails ---
+    "guardrails": {
+        "no_low_edge_bets": True,
+        "must_pass_all_filters": True
+    }
+}
+
+# END OF CONFIG
