@@ -11,7 +11,7 @@ BRAIN_CONFIG = {
         "roster_engine": "Option_A_AutoSave",
         "core_teams": [
             "Hornets", "Magic", "Nuggets",
-            "Thunder", "Clippers", "Hawks", "Knicks"
+            "Thunder", "Clippers", "Heat", "Knicks"
         ]
     },
 
