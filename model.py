@@ -56,3 +56,8 @@ def get_team_profile(team_name: str):
     teams = BRAIN_CONFIG["teams"]
     return teams.get(team_name, {})
 
+
+def get_team_profile(team_name: str):
+    return BRAIN_CONFIG["teams"].get(team_name, {})
+
+
