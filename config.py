@@ -95,7 +95,7 @@ BRAIN_CONFIG = {
         "Nuggets":  {"strength": 90},
         "Thunder":  {"strength": 80},
         "Clippers": {"strength": 75},
-        "Hawks":    {"strength": 65},
+        "Heat":    {"strength": 65},
         "Knicks":   {"strength": 72}
     },
 
