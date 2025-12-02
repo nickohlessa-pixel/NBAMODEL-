@@ -61,3 +61,20 @@ def get_team_profile(team_name: str):
     return BRAIN_CONFIG["teams"].get(team_name, {})
 
 
+
+def get_team_profile(team_name: str):
+    """
+    Returns the full team block from BRAIN_CONFIG.
+    This lets the model use the real V3.2 knowledge pack
+    instead of the old placeholder 'strength only' system.
+    """
+    teams = BRAIN_CONFIG.get("teams", {})
+    profile = teams.get(team_name)
+    
+    if profile is None:
+        return {"error": f"Team '{team_name}' not found in BRAIN_CONFIG"}
+    
+    return profile
+
+
+
