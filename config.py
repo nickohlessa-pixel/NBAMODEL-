@@ -38,31 +38,34 @@ BRAIN_CONFIG = {
     "teams": {
         
 
-               "Hornets": {
-    "strength": 40,
-    "identity": "young, volatile, offense-first, terrible defense",
-    "offense_tags": [
-        "elite PnR roll-man scoring",
-        "elite post-up scoring",
-        "elite putbacks",
-        "strong floaters",
-        "strong cuts",
-        "high variance"
+            "Hornets": {
+    "identity": "young, volatile, offense-first, bad defense, perimeter issues",
+    "offense_strengths": [
+        "elite PnR roll man scoring (#1 in NBA)",
+        "elite post scoring",
+        "elite putback scoring",
+        "elite floater creation",
+        "above-average isolation scoring",
+        "strong halfcourt shot creation"
     ],
-    "defense_tags": [
-        "terrible off-screen defense",
-        "terrible spot-up defense",
-        "terrible PnR defense",
-        "weak rim protection",
-        "bad transition defense"
+    "defense_weaknesses": [
+        "terrible off-screen defense (0th percentile)",
+        "bottom 3% spot-up defense",
+        "bottom 5% PnR defense (ball handler & roll man)",
+        "bad isolation defense",
+        "bad transition defense",
+        "bad deep 3 defense"
     ],
-    "betting_notes": [
-        "good dog",
-        "bad favorite",
-        "overs vs soft defenses",
-        "fade vs shooting teams"
+    "betting_tags": [
+        "high-variance team",
+        "good underdog",
+        "dangerous favorite",
+        "totals lean over vs fast teams",
+        "fade vs shooting/motion teams",
+        "upgrade when LaMelo + Miller are healthy"
     ]
 },
+
 
 
 
