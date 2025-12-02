@@ -1,10 +1,7 @@
+%%writefile config.py
 # ==========================================
 # NBA MODEL BRAIN V3.2 - CONFIG SKELETON
 # ==========================================
-
-# This file stores the model’s rules, identity tags,
-# team profiles, guardrails, and any user-defined logic.
-# For now, this is just the empty structure.
 
 BRAIN_CONFIG = {
 
@@ -21,7 +18,7 @@ BRAIN_CONFIG = {
     # --- Betting Rules ---
     "betting": {
         "unit_system": "1U_default",
-        "allow_props": False,      # Props come later
+        "allow_props": False,
         "high_conviction_only": True,
         "require_min_edge": True
     },
@@ -37,32 +34,15 @@ BRAIN_CONFIG = {
         "anti_ass_blast": True
     },
 
-    # --- Team Profiles (empty for now) ---
-        # --- Team Profiles (dummy strength ratings for now) ---
+    # --- Team Profiles (dummy strength ratings) ---
     "teams": {
-        "Hornets": {
-            "strength": 40
-        },
-        "Magic": {
-            "strength": 70
-        },
-        "Nuggets": {
-            "strength": 90
-        },
-        "Thunder": {
-            "strength": 80
-        },
-        "Clippers": {
-            "strength": 75
-        },
-        "Hawks": {
-            "strength": 65
-        },
-        "Knicks": {
-            "strength": 72
-        }
-    },
-
+        "Hornets":  {"strength": 40},
+        "Magic":    {"strength": 70},
+        "Nuggets":  {"strength": 90},
+        "Thunder":  {"strength": 80},
+        "Clippers": {"strength": 75},
+        "Hawks":    {"strength": 65},
+        "Knicks":   {"strength": 72}
     },
 
     # --- Guardrails ---
