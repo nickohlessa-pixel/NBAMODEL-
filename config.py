@@ -38,33 +38,49 @@ BRAIN_CONFIG = {
     "teams": {
         
 
-            "Hornets": {
-    "identity": "young, volatile, offense-first, bad defense, perimeter issues",
-    "offense_strengths": [
-        "elite PnR roll man scoring (#1 in NBA)",
-        "elite post scoring",
-        "elite putback scoring",
-        "elite floater creation",
-        "above-average isolation scoring",
-        "strong halfcourt shot creation"
+          "Hornets": {
+    "strength": 40,
+
+    "identity": "Young, volatile, offense-first, poor defense, extreme variance. Elite inside scoring, terrible perimeter shooting and perimeter defense.",
+
+    "offense": {
+        "pnr_roll_ppp": "elite",
+        "post_up_ppp": "elite",
+        "putbacks": "elite",
+        "floaters": "strong",
+        "isolation": "above_average",
+        "shot_profile": "rim-heavy, low-3pt, high-variance",
+        "variance": "high"
+    },
+
+    "defense": {
+        "off_screen_defense": "worst_in_nba",
+        "spot_up_defense": "bottom_3_percent",
+        "pnr_ball_handler_defense": "bottom_5_percent",
+        "pnr_roll_man_defense": "bottom_5_percent",
+        "isolation_defense": "poor",
+        "transition_defense": "bad",
+        "deep_3_defense": "bad"
+    },
+
+    "tags": [
+        "young_team",
+        "high_variance",
+        "poor_defense",
+        "strong_rim_scoring",
+        "weak_shooting",
+        "volatile_as_favorite",
+        "dangerous_as_dog"
     ],
-    "defense_weaknesses": [
-        "terrible off-screen defense (0th percentile)",
-        "bottom 3% spot-up defense",
-        "bottom 5% PnR defense (ball handler & roll man)",
-        "bad isolation defense",
-        "bad transition defense",
-        "bad deep 3 defense"
-    ],
-    "betting_tags": [
-        "high-variance team",
-        "good underdog",
-        "dangerous favorite",
-        "totals lean over vs fast teams",
-        "fade vs shooting/motion teams",
-        "upgrade when LaMelo + Miller are healthy"
-    ]
+
+    "betting_rules": {
+        "auto_fade_vs_shooters": True,
+        "auto_upgrade_vs_rim_inept_teams": True,
+        "totals_lean_over_vs_fast_teams": True,
+        "totals_lean_under_vs_slow_ugly_teams": True
+    }
 },
+
 
 
 
