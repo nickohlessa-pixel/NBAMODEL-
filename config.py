@@ -38,49 +38,53 @@ BRAIN_CONFIG = {
     "teams": {
         
 
-          "Hornets": {
+        "Hornets": {
     "strength": 40,
 
-    "identity": "Young, volatile, offense-first, poor defense, extreme variance. Elite inside scoring, terrible perimeter shooting and perimeter defense.",
-
-    "offense": {
-        "pnr_roll_ppp": "elite",
-        "post_up_ppp": "elite",
-        "putbacks": "elite",
-        "floaters": "strong",
-        "isolation": "above_average",
-        "shot_profile": "rim-heavy, low-3pt, high-variance",
-        "variance": "high"
+    "identity": {
+        "offense": "elite paint scoring, PnR-heavy, good floaters, terrible 3pt shooting",
+        "defense": "poor POA, bad vs shooters and movement, weak PnR defense",
+        "pace": "fast",
+        "variance": "high",
+        "shot_profile": {
+            "rim": "high",
+            "midrange": "medium",
+            "threes": "low",
+            "creation": "heliocentric LaMelo-driven"
+        }
     },
 
-    "defense": {
-        "off_screen_defense": "worst_in_nba",
-        "spot_up_defense": "bottom_3_percent",
-        "pnr_ball_handler_defense": "bottom_5_percent",
-        "pnr_roll_man_defense": "bottom_5_percent",
-        "isolation_defense": "poor",
-        "transition_defense": "bad",
-        "deep_3_defense": "bad"
+    "rotation": {
+        "LaMelo Ball": "primary creator, high-usage engine, high-variance scorer",
+        "Brandon Miller": "secondary creator, improving shotmaker",
+        "Mark Williams": "rim finisher, rebounder, roll man (only if user confirms he's active in 25–26)",
+        "Supporting Wings": "volatile, inconsistent shooting, defensive issues"
     },
 
-    "tags": [
-        "young_team",
-        "high_variance",
-        "poor_defense",
-        "strong_rim_scoring",
-        "weak_shooting",
-        "volatile_as_favorite",
-        "dangerous_as_dog"
+    "strengths": [
+        "Elite PnR roll-man scoring",
+        "Elite post-up scoring",
+        "Elite putback efficiency",
+        "Elite floater creation",
+        "Top-1 transition scoring efficiency"
     ],
 
-    "betting_rules": {
-        "auto_fade_vs_shooters": True,
-        "auto_upgrade_vs_rim_inept_teams": True,
-        "totals_lean_over_vs_fast_teams": True,
-        "totals_lean_under_vs_slow_ugly_teams": True
-    }
-},
+    "weaknesses": [
+        "Worst off-screen defense in NBA",
+        "Bottom 3% spot-up defense",
+        "Bottom-tier PnR ball-handler defense",
+        "Bad in isolation defense",
+        "Terrible 3pt shooting and spacing"
+    ],
 
+    "betting_angles": [
+        "High-variance: good dogs, bad favorites",
+        "Overs vs soft defenses",
+        "Unders vs slow rock-fight teams",
+        "Fade them vs shooting teams",
+        "Back them vs non-shooting interior teams"
+    ]
+},
 
 
 
