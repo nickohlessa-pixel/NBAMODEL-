@@ -38,45 +38,32 @@ BRAIN_CONFIG = {
     "teams": {
         
 
-                "Hornets": {
-            "strength": 40,  # rough overall baseline, we'll tune later
+               "Hornets": {
+    "strength": 40,
+    "identity": "young, volatile, offense-first, terrible defense",
+    "offense_tags": [
+        "elite PnR roll-man scoring",
+        "elite post-up scoring",
+        "elite putbacks",
+        "strong floaters",
+        "strong cuts",
+        "high variance"
+    ],
+    "defense_tags": [
+        "terrible off-screen defense",
+        "terrible spot-up defense",
+        "terrible PnR defense",
+        "weak rim protection",
+        "bad transition defense"
+    ],
+    "betting_notes": [
+        "good dog",
+        "bad favorite",
+        "overs vs soft defenses",
+        "fade vs shooting teams"
+    ]
+},
 
-            # 2025-26 core roster snapshot (no Mark Williams)
-            "roster_2025_26": [
-                "LaMelo Ball",
-                "Tre Mann",
-                "Collin Sexton",
-                "KJ Simpson",
-                "Kon Knueppel",
-                "Sion James",
-                "Josh Green",
-                "Pat Connaughton",
-                "Liam McNeeley",
-                "Miles Bridges",
-                "Drew Peterson",
-                "Ryan Kalkbrenner",
-                "Moussa Diabaté",
-                "Mason Plumlee",
-                "Grant Williams"
-            ],
-
-            # Quick tags about who they are right now
-            "style_tags": [
-                "offense_middle_of_pack",   # ORtg ~115, around 19–20th :contentReference[oaicite:0]{index=0}
-                "defense_bottom_10",        # DRtg ~120, about 24th :contentReference[oaicite:1]{index=1}
-                "rebounds_top_half",        # good rebounding rates, esp. defensive :contentReference[oaicite:2]{index=2}
-                "pace_medium"               # not super fast like old Melo teams, more middle-ish :contentReference[oaicite:3]{index=3}
-            ],
-
-            # Snapshot team stats for 2025-26 to drive future logic
-            "team_stats_2025_26": {
-                "off_rating": 115.1,          # offensive rating :contentReference[oaicite:4]{index=4}
-                "def_rating": 119.8,          # defensive rating :contentReference[oaicite:5]{index=5}
-                "net_rating": -4.7,           # net rating (bad but not worst) :contentReference[oaicite:6]{index=6}
-                "pts_per_game": 115.2,        # team PPG :contentReference[oaicite:7]{index=7}
-                "opp_pts_per_game": 120.0     # opponent PPG :contentReference[oaicite:8]{index=8}
-            }
-        },
 
 
 
