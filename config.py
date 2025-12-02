@@ -1,4 +1,3 @@
-%%writefile config.py
 # ==========================================
 # NBA MODEL BRAIN V3.2 - CONFIG SKELETON
 # ==========================================
@@ -34,9 +33,8 @@ BRAIN_CONFIG = {
         "anti_ass_blast": True
     },
 
-    # --- Team Profiles (dummy strength ratings) ---
+    # --- Team Profiles (dummy until upgraded) ---
     "teams": {
-
         "Hornets": {
             "strength": 40,
             "identity": {
@@ -51,13 +49,12 @@ BRAIN_CONFIG = {
                 }
             }
         },
-
-        "Magic":   {"strength": 70},
+        "Magic": {"strength": 70},
         "Nuggets": {"strength": 90},
         "Thunder": {"strength": 80},
-        "Clippers":{"strength": 75},
-        "Heat":    {"strength": 65},
-        "Knicks":  {"strength": 72}
+        "Clippers": {"strength": 75},
+        "Heat": {"strength": 50},
+        "Knicks": {"strength": 72}
     },
 
     # --- Guardrails ---
