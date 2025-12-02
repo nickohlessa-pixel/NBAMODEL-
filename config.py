@@ -36,9 +36,23 @@ BRAIN_CONFIG = {
 
     # --- Team Profiles (dummy strength ratings) ---
     "teams": {
-        "Hornets": {
-            "strength": 40
+     
+                "Hornets": {
+            "strength": 40,
+            "identity": {
+                "offense": "elite paint and PnR scoring, bad 3PT shooting, high variance",
+                "defense": "poor POA, bad vs shooters and movement, weak PnR defense",
+                "pace": "fast",
+                "variance": "high",
+                "shot_profile": {
+                    "rim": "high",
+                    "midrange": "medium",
+                    "threes": "low"
+                }
+            }
         },
+
+        
         "Magic": {"strength": 70},
         "Nuggets": {"strength": 90},
         "Thunder": {"strength": 80},
