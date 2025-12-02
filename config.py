@@ -33,7 +33,7 @@ BRAIN_CONFIG = {
         "anti_ass_blast": True
     },
 
-    # --- Team Profiles (dummy until upgraded) ---
+    # --- Team Profiles ---
     "teams": {
         "Hornets": {
             "strength": 40,
@@ -49,6 +49,7 @@ BRAIN_CONFIG = {
                 }
             }
         },
+
         "Magic": {"strength": 70},
         "Nuggets": {"strength": 90},
         "Thunder": {"strength": 80},
