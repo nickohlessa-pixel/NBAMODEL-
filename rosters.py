@@ -26,10 +26,83 @@ ROSTERS = {
     "Thunder": {
         "players": {},
         "notes": "User will populate Thunder roster."
-    },
-    "Knicks": {
-        "players": {},
-        "notes": "User will populate Knicks roster."
+        "Knicks": {
+        "players": {
+            "Karl-Anthony Towns": {
+                "role": "starter",
+                "notes": "C, 7-0, 248, key player, superstar, shooter, spacing big"
+            },
+            "Mikal Bridges": {
+                "role": "starter",
+                "notes": "SF, 6-6, 209, elite 3&D, key player"
+            },
+            "Jordan Clarkson": {
+                "role": "starter",
+                "notes": "SG, 6-5, 194, key rotational player, currently starting"
+            },
+            "Josh Hart": {
+                "role": "starter",
+                "notes": "SF, 6-5, 215, key rotational player"
+            },
+            "Jalen Brunson": {
+                "role": "starter",
+                "notes": "PG, 6-2, 190, elite superstar, primary creator, heavy on-ball usage"
+            },
+            "Guerschon Yabusele": {
+                "role": "bench",
+                "notes": "C/F, 6-7, physical big, bench depth"
+            },
+            "Miles McBride": {
+                "role": "bench",
+                "notes": "SG/guard, 6-2, 195, key rotational 3&D player"
+            },
+            "Tyler Kolek": {
+                "role": "bench",
+                "notes": "PG, 6-2, 195, born March 27 2001, rookie, George Mason/Marquette"
+            },
+            "Mitchell Robinson": {
+                "role": "bench",
+                "notes": "C, 7-0, 240, first big off bench, rim protector"
+            },
+            "Mohamed Diawara": {
+                "role": "bench",
+                "notes": "SF, 6-9, 225, rookie, born April 29 2005, France"
+            },
+            "Landry Shamet": {
+                "role": "injured_out",
+                "notes": "SG, 6-5, 190, 6th man shooter, currently hurt"
+            },
+            "OG Anunoby": {
+                "role": "injured_out",
+                "notes": "PF/F, 6-7, 240, key starter-level player, currently injured"
+            },
+            "Ariel Hukporti": {
+                "role": "out_of_rotation",
+                "notes": "C, 7-0, 246, born April 11 2002, depth big"
+            },
+            "Pacome Dadiet": {
+                "role": "out_of_rotation",
+                "notes": "SG/wing, 6-9, 210, born July 27 2005, rookie, France"
+            },
+            "Tosan Evbuomwan": {
+                "role": "out_of_rotation",
+                "notes": "SF, 6-8, 217, two-way, born February 16 2001, Princeton"
+            },
+            "Trey Jemison": {
+                "role": "out_of_rotation",
+                "notes": "C, 6-10, 270, two-way, born November 28 1999, Clemson/UAB"
+            },
+            "P.J. Tucker": {
+                "role": "out_of_rotation",
+                "notes": "F, 6-5, 245, born May 5 1985, defensive vet, 14th year"
+            },
+            "Kevin McCullar Jr.": {
+                "role": "out_of_rotation",
+                "notes": "SF, 6-6, 210, two-way wing"
+            }
+        },
+        "notes": "User-defined Knicks roster for 2025-26 universe."
+
     },
     "Heat": {
         "players": {},
