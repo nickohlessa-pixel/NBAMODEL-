@@ -23,10 +23,15 @@
 
 
 ROSTERS = {
-    "Thunder": {
-        "players": {},
-        "notes": "User will populate Thunder roster."
-    },
+    
+    "Oklahoma City Thunder": {
+    "players": [
+        # Add players once confirmed by USER
+    ],
+    "injuries": {},
+    "notes": []
+},
+
 
     "Knicks": {
         "players": {
