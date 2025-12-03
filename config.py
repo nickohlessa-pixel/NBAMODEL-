@@ -1,5 +1,5 @@
 # ==========================================
-# NBA MODEL BRAIN V3.2 - CONFIG
+# NBA MODEL BRAIN V3.2 - CONFIG (Updated Strengths)
 # ==========================================
 
 BRAIN_CONFIG = {
@@ -27,7 +27,7 @@ BRAIN_CONFIG = {
         "require_min_edge": True
     },
 
-    # --- Filters (7-filter system) ---
+    # --- Filters ---
     "filters": {
         "info_certainty": True,
         "trend_confirmation": True,
@@ -40,27 +40,82 @@ BRAIN_CONFIG = {
 
     # --- Team Profiles ---
     "teams": {
-        "Hornets": {
-            "strength": 40,
+        "Thunder": {
+            "strength": 90,
             "identity": {
-                "offense": "elite paint scoring, PnR-heavy, good floaters, terrible 3pt shooting",
-                "defense": "poor POA, bad vs shooters and movement, weak PnR defense",
+                "offense": "drive-and-kick, efficient slashing, good spacing, lots of free throws",
+                "defense": "switchable, disruptive on-ball, vulnerable on glass vs size",
                 "pace": "fast",
-                "variance": "high",
-                "shot_profile": {
-                    "rim": "high",
-                    "midrange": "medium",
-                    "threes": "low"
-                }
+                "variance": "medium",
+                "shot_profile": {"rim": "high", "midrange": "low", "threes": "high"}
             }
         },
 
-        "Magic":   {"strength": 70},
-        "Nuggets": {"strength": 90},
-        "Thunder": {"strength": 80},
-        "Clippers":{"strength": 75},
-        "Heat":    {"strength": 50},
-        "Knicks":  {"strength": 72}
+        "Knicks": {
+            "strength": 85,
+            "identity": {
+                "offense": "heavy on star creation, offensive rebounding, iso scoring",
+                "defense": "physical, strong glass control, susceptible to pull-up shooting",
+                "pace": "slow",
+                "variance": "low",
+                "shot_profile": {"rim": "medium", "midrange": "medium", "threes": "medium"}
+            }
+        },
+
+        "Heat": {
+            "strength": 80,
+            "identity": {
+                "offense": "grindy, movement-based, handoff sets, streaky shooting",
+                "defense": "schemey, zone/switch, disciplined but vulnerable to size/talent gaps",
+                "pace": "slow",
+                "variance": "medium",
+                "shot_profile": {"rim": "low", "midrange": "medium", "threes": "medium"}
+            }
+        },
+
+        "Magic": {
+            "strength": 75,
+            "identity": {
+                "offense": "size-based, downhill pressure, post-heavy, streaky shooting",
+                "defense": "elite length, strong rotations, rim protection, weakness vs elite shooters",
+                "pace": "medium",
+                "variance": "medium",
+                "shot_profile": {"rim": "high", "midrange": "low", "threes": "medium"}
+            }
+        },
+
+        "Nuggets": {
+            "strength": 70,
+            "identity": {
+                "offense": "Jokic-engine, elite halfcourt efficiency, cutting & two-man game",
+                "defense": "solid structure, drops in bench minutes, vulnerable without Jokic",
+                "pace": "medium",
+                "variance": "low",
+                "shot_profile": {"rim": "medium", "midrange": "medium", "threes": "medium"}
+            }
+        },
+
+        "Hornets": {
+            "strength": 65,
+            "identity": {
+                "offense": "paint-heavy, PnR, floaters, terrible 3pt shooting",
+                "defense": "poor POA, bad vs movement & shooting, weak PnR defense",
+                "pace": "fast",
+                "variance": "high",
+                "shot_profile": {"rim": "high", "midrange": "medium", "threes": "low"}
+            }
+        },
+
+        "Clippers": {
+            "strength": 60,
+            "identity": {
+                "offense": "iso/PnR heavy, midrange leaning, veteran shot-making",
+                "defense": "aging switch defenders, inconsistent intensity",
+                "pace": "slow",
+                "variance": "high",
+                "shot_profile": {"rim": "low", "midrange": "high", "threes": "medium"}
+            }
+        }
     },
 
     # --- Guardrails ---
