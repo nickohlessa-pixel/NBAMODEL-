@@ -1,5 +1,5 @@
 # ==========================================
-# NBA MODEL BRAIN V3.2 - MODEL LOGIC V1.3
+# NBA MODEL BRAIN V3.2 - MODEL LOGIC V1.4
 # ==========================================
 
 from config import BRAIN_CONFIG
@@ -128,7 +128,7 @@ def project_total(team_a: str, team_b: str) -> dict:
 
 
 # ------------------------------
-# Guardrails / edges
+# Guardrails / edges / confidence
 # ------------------------------
 
 def _min_edge_points() -> float:
@@ -145,6 +145,29 @@ def _min_edge_points() -> float:
         return 0.0
 
     return 2.0  # default threshold
+
+
+def _edge_confidence(edge: float, min_edge: float) -> str:
+    """
+    Map edge size to a confidence tier.
+
+    abs(edge) < min_edge         -> "NO BET"
+    min_edge .. min_edge+1.5     -> "C"
+    min_edge+1.5 .. min_edge+3.0 -> "B"
+    >= min_edge+3.0              -> "A"
+    """
+    abs_edge = abs(edge)
+
+    if abs_edge < min_edge:
+        return "NO BET"
+
+    margin = abs_edge - min_edge
+
+    if margin >= 3.0:
+        return "A"
+    if margin >= 1.5:
+        return "B"
+    return "C"
 
 
 # ------------------------------
@@ -182,13 +205,17 @@ def evaluate_matchup(team_a: str, team_b: str, spread: float, total: float) -> d
     guardrails = BRAIN_CONFIG.get("guardrails", {})
     min_edge = _min_edge_points()
 
-    # --- Recommendations (very simple for now) ---
+    # --- Confidence tiers ---
+    spread_conf = _edge_confidence(spread_edge, min_edge)
+    total_conf = _edge_confidence(total_edge, min_edge)
+
+    # --- Recommendations (now driven by confidence) ---
     spread_reco = "NO BET"
     total_reco = "NO BET"
 
-    if abs(spread_edge) >= min_edge:
+    if spread_conf != "NO BET":
         spread_reco = "MODEL LEAN"
-    if abs(total_edge) >= min_edge:
+    if total_conf != "NO BET":
         total_reco = "MODEL LEAN"
 
     # --- Roster keys for future role/roster-aware logic ---
@@ -227,6 +254,10 @@ def evaluate_matchup(team_a: str, team_b: str, spread: float, total: float) -> d
         "guardrails": guardrails,
         "min_edge": min_edge,
 
+        # confidence tiers
+        "spread_confidence": spread_conf,
+        "total_confidence": total_conf,
+
         # outputs
         "spread_reco": spread_reco,
         "total_reco": total_reco,
@@ -258,6 +289,7 @@ def run_matchup(team_a: str, team_b: str, spread: float, total: float) -> None:
     print(f"Clamped diff used for spread: {result['clamped_diff']}")
     print(f"Model projected spread for {result['team_a']}: {result['model_spread_team_a']}")
     print(f"Spread edge (model - market): {result['spread_edge']:+.1f} points")
+    print(f"Spread confidence tier: {result['spread_confidence']}")
 
     print("\n--- Total Model ---")
     print(f"Base total: {result['base_total']}")
@@ -267,6 +299,7 @@ def run_matchup(team_a: str, team_b: str, spread: float, total: float) -> None:
     print(f"Pace adjustment: {result['pace_adjustment']:+.1f}")
     print(f"Model projected total: {result['model_total']}")
     print(f"Total edge (model - market): {result['total_edge']:+.1f} points")
+    print(f"Total confidence tier: {result['total_confidence']}")
 
     print("\n--- Guardrails & Filters ---")
     print("Core teams:", result["core_teams"])
@@ -274,11 +307,11 @@ def run_matchup(team_a: str, team_b: str, spread: float, total: float) -> None:
     print("Guardrails:", result["guardrails"])
     print(f"\nMinimum edge required by config: {result['min_edge']} points")
 
-    print(f"\nSpread recommendation: {result['spread_reco']}")
-    print(f"Total recommendation:  {result['total_reco']}")
+    print(f"\nSpread recommendation: {result['spread_reco']} (confidence: {result['spread_confidence']})")
+    print(f"Total recommendation:  {result['total_reco']} (confidence: {result['total_confidence']})")
 
     print("\nNOTE:")
-    print("- This is V1.3 logic (V1.2 + team_key_map awareness).")
+    print("- This is V1.4 logic (V1.2 base + team_key_map + confidence tiers).")
     print("- No injury data or BBall Index matchup stats yet.")
     print("- All roster/role data comes only from user inputs.")
     print("- Guardrails are active and can be tuned later.")
