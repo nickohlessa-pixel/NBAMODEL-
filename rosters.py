@@ -26,7 +26,9 @@ ROSTERS = {
     "Thunder": {
         "players": {},
         "notes": "User will populate Thunder roster."
-        "Knicks": {
+    },
+
+    "Knicks": {
         "players": {
             "Karl-Anthony Towns": {
                 "role": "starter",
@@ -102,20 +104,23 @@ ROSTERS = {
             }
         },
         "notes": "User-defined Knicks roster for 2025-26 universe."
-
     },
+
     "Heat": {
         "players": {},
         "notes": "User will populate Heat roster."
     },
+
     "Magic": {
         "players": {},
         "notes": "User will populate Magic roster."
     },
+
     "Nuggets": {
         "players": {},
         "notes": "User will populate Nuggets roster."
     },
+
     "Hornets": {
         "players": {
             "Miles Bridges": {
@@ -193,6 +198,7 @@ ROSTERS = {
         },
         "notes": "User-defined Hornets roster for 2025-26 universe."
     },
+
     "Clippers": {
         "players": {},
         "notes": "User will populate Clippers roster."
