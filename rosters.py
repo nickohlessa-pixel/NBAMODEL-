@@ -10,7 +10,7 @@
 #
 # This file is the single source of truth for:
 #   - Team rosters
-#   - Player roles (starter / bench / inactive)
+#   - Player roles (starter / bench / out_of_rotation / injured_out)
 #   - Notes (injuries, usage, matchups, trends)
 #
 # Future expansion:
@@ -19,10 +19,6 @@
 #   - Minutes estimates
 #   - Injury state
 #   - Export/import roster packs
-#
-# For now, start simple:
-#   - Empty rosters for all core teams
-#   - Guaranteed safe structure for expansion
 # ==========================================
 
 
@@ -48,8 +44,81 @@ ROSTERS = {
         "notes": "User will populate Nuggets roster."
     },
     "Hornets": {
-        "players": {},
-        "notes": "User will populate Hornets roster."
+        "players": {
+            "Miles Bridges": {
+                "role": "starter",
+                "notes": "PF, 6-7, 225, born March 21 1998, Michigan State"
+            },
+            "Kon Knueppel": {
+                "role": "starter",
+                "notes": "SF, 6-6, 215, born August 3 2005, rookie, Duke"
+            },
+            "Ryan Kalkbrenner": {
+                "role": "starter",
+                "notes": "C, 7-1, 256, born January 17 2002, rookie, Creighton"
+            },
+            "LaMelo Ball": {
+                "role": "starter",
+                "notes": "PG, 6-7, 180, born August 22 2001, 5th year"
+            },
+            "Brandon Miller": {
+                "role": "starter",
+                "notes": "SF, 6-7, 200, born November 22 2002, 2nd year, Alabama"
+            },
+            "Moussa Diabaté": {
+                "role": "bench",
+                "notes": "C, 6-10, 210, born January 21 2002, 3rd year, Michigan"
+            },
+            "Sion James": {
+                "role": "bench",
+                "notes": "SG, 6-5, 220, born December 4 2002, rookie, Tulane/Duke"
+            },
+            "Collin Sexton": {
+                "role": "bench",
+                "notes": "SG, 6-3, 190, born January 4 1999, 7th year, Alabama"
+            },
+            "Tre Mann": {
+                "role": "bench",
+                "notes": "PG, 6-4, 178, born February 3 2001, 4th year, Florida"
+            },
+            "Tidjane Salaün": {
+                "role": "bench",
+                "notes": "PF, 6-10, 207, born August 10 2005, rookie"
+            },
+            "Liam McNeeley": {
+                "role": "out_of_rotation",
+                "notes": "SF, 6-7, 210, born October 10 2005, rookie, UConn"
+            },
+            "Pat Connaughton": {
+                "role": "out_of_rotation",
+                "notes": "SG, 6-5, 209, born January 6 1993, 10th year, Notre Dame"
+            },
+            "KJ Simpson": {
+                "role": "out_of_rotation",
+                "notes": "PG, 6-2, 189, born August 8 2002, two-way, Colorado"
+            },
+            "Mason Plumlee": {
+                "role": "out_of_rotation",
+                "notes": "C, 7-0, 254, born March 5 1990, 12th year, Duke"
+            },
+            "Drew Peterson": {
+                "role": "out_of_rotation",
+                "notes": "PF, 6-8, 205, born November 9 1999, two-way, Rice/USC"
+            },
+            "Antonio Reeves": {
+                "role": "out_of_rotation",
+                "notes": "SG, 6-5, 205, born November 20 2000, two-way, Illinois State/Kentucky"
+            },
+            "Josh Green": {
+                "role": "injured_out",
+                "notes": "SG, 6-6, 200, born November 16 2000, 5th year, Arizona, OUT injured"
+            },
+            "Grant Williams": {
+                "role": "injured_out",
+                "notes": "PF, 6-7, 236, born November 30 1998, 6th year, Tennessee, OUT injured"
+            }
+        },
+        "notes": "User-defined Hornets roster for 2025-26 universe."
     },
     "Clippers": {
         "players": {},
