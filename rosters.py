@@ -26,11 +26,29 @@ ROSTERS = {
     
     "Oklahoma City Thunder": {
     "players": [
-        # Add players once confirmed by USER
+        {"name": "Shai Gilgeous-Alexander", "role": "starter", "notes": "superstar, MVP, key offensive driver"},
+        {"name": "Ajay Mitchell", "role": "bench", "notes": "key rotational player"},
+        {"name": "Cason Wallace", "role": "bench", "notes": "6th man, key rotational player"},
+        {"name": "Jaylin Williams", "role": "bench", "notes": "key rotational big man"},
+        {"name": "Isaiah Hartenstein", "role": "starter", "notes": "starting center, defensive hinge, rebounding threat"},
+        {"name": "Chet Holmgren", "role": "starter", "notes": "scorer, shot blocker, versatility"},
+        {"name": "Isaiah Joe", "role": "bench", "notes": ""},
+        {"name": "Chris Youngblood", "role": "bench", "notes": "(TW)"},
+        {"name": "Luguentz Dort", "role": "starter", "notes": "elite defender"},
+        {"name": "Alex Caruso", "role": "bench", "notes": "key rotational player, elite defender"},
+        {"name": "Brooks Barnhizer", "role": "OOR", "notes": "(TW)"},
+        {"name": "Branden Carlson", "role": "OOR", "notes": "(TW)"},
+        {"name": "Ousmane Dieng", "role": "bench", "notes": ""},
+        {"name": "Aaron Wiggins", "role": "bench", "notes": "key rotational player"},
+        {"name": "Kenrich Williams", "role": "bench", "notes": ""},
+        {"name": "Jalen Williams", "role": "starter", "notes": "2nd best player on the team, offensive and defensive motor"},
+        {"name": "Nikola Topić", "role": "out", "notes": ""},
+        {"name": "Thomas Sorber", "role": "OOR", "notes": ""}
     ],
     "injuries": {},
     "notes": []
 },
+
 
 
     "Knicks": {
