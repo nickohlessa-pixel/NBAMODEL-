@@ -1,6 +1,5 @@
-%%writefile config.py
 # ==========================================
-# NBA MODEL BRAIN V3.2 - CONFIG SKELETON
+# NBA MODEL BRAIN V3.2 - CONFIG
 # ==========================================
 
 BRAIN_CONFIG = {
@@ -56,12 +55,12 @@ BRAIN_CONFIG = {
             }
         },
 
-        "Magic": {"strength": 70},
+        "Magic":   {"strength": 70},
         "Nuggets": {"strength": 90},
         "Thunder": {"strength": 80},
-        "Clippers": {"strength": 75},
-        "Heat": {"strength": 50},
-        "Knicks": {"strength": 72}
+        "Clippers":{"strength": 75},
+        "Heat":    {"strength": 50},
+        "Knicks":  {"strength": 72}
     },
 
     # --- Guardrails ---
