@@ -1,13 +1,21 @@
 # ==========================================
-# NBA MODEL BRAIN V3.2 - CONFIG (Updated Strengths)
+# NBA MODEL BRAIN V3.2 - CONFIG (Updated Strengths + Team Key Map)
 # ==========================================
 
 BRAIN_CONFIG = {
+
+    # --- Metadata / Version ---
+    "meta": {
+        "version": "3.2",
+        "description": "Core team strengths, identities, and guardrails for NBA Model Brain V3.2"
+    },
 
     # --- Universe Rules ---
     "universe_rules": {
         "user_is_truth": True,
         "roster_engine": "Option_A_AutoSave",
+
+        # Core teams the brain will treat as highest priority for accuracy/depth
         "core_teams": [
             "Hornets",
             "Magic",
@@ -16,7 +24,19 @@ BRAIN_CONFIG = {
             "Clippers",
             "Heat",
             "Knicks"
-        ]
+        ],
+
+        # Mapping between shorthand model names and roster.py keys
+        # This prevents any confusion between "Thunder" vs "Oklahoma City Thunder", etc.
+        "team_key_map": {
+            "Thunder": "Oklahoma City Thunder",
+            "Heat": "Miami Heat",
+            "Magic": "Magic",
+            "Nuggets": "Nuggets",
+            "Hornets": "Hornets",
+            "Clippers": "Clippers",
+            "Knicks": "Knicks"
+        }
     },
 
     # --- Betting Rules ---
@@ -27,18 +47,18 @@ BRAIN_CONFIG = {
         "require_min_edge": True
     },
 
-    # --- Filters ---
+    # --- Filters / Guardrails Switches ---
     "filters": {
-        "info_certainty": True,
-        "trend_confirmation": True,
-        "matchup_logic": True,
-        "line_value_required": True,
-        "no_emotion": True,
-        "variance_filter": True,
-        "anti_ass_blast": True
+        "info_certainty": True,       # Must have up-to-date info
+        "trend_confirmation": True,   # Trends must be real, not one-game noise
+        "matchup_logic": True,        # Basketball logic must align with numbers
+        "line_value_required": True,  # No bets without clear value vs line
+        "no_emotion": True,           # No vibes-only bets
+        "variance_filter": True,      # Avoid ultra-high volatility spots unless edge is huge
+        "anti_ass_blast": True        # Explicitly avoid spots likely to create blowouts against us
     },
 
-    # --- Team Profiles ---
+    # --- Team Profiles (Strengths + Identities) ---
     "teams": {
         "Thunder": {
             "strength": 90,
@@ -47,7 +67,11 @@ BRAIN_CONFIG = {
                 "defense": "switchable, disruptive on-ball, vulnerable on glass vs size",
                 "pace": "fast",
                 "variance": "medium",
-                "shot_profile": {"rim": "high", "midrange": "low", "threes": "high"}
+                "shot_profile": {
+                    "rim": "high",
+                    "midrange": "low",
+                    "threes": "high"
+                }
             }
         },
 
@@ -58,7 +82,11 @@ BRAIN_CONFIG = {
                 "defense": "physical, strong glass control, susceptible to pull-up shooting",
                 "pace": "slow",
                 "variance": "low",
-                "shot_profile": {"rim": "medium", "midrange": "medium", "threes": "medium"}
+                "shot_profile": {
+                    "rim": "medium",
+                    "midrange": "medium",
+                    "threes": "medium"
+                }
             }
         },
 
@@ -69,7 +97,11 @@ BRAIN_CONFIG = {
                 "defense": "schemey, zone/switch, disciplined but vulnerable to size/talent gaps",
                 "pace": "slow",
                 "variance": "medium",
-                "shot_profile": {"rim": "low", "midrange": "medium", "threes": "medium"}
+                "shot_profile": {
+                    "rim": "low",
+                    "midrange": "medium",
+                    "threes": "medium"
+                }
             }
         },
 
@@ -80,7 +112,11 @@ BRAIN_CONFIG = {
                 "defense": "elite length, strong rotations, rim protection, weakness vs elite shooters",
                 "pace": "medium",
                 "variance": "medium",
-                "shot_profile": {"rim": "high", "midrange": "low", "threes": "medium"}
+                "shot_profile": {
+                    "rim": "high",
+                    "midrange": "low",
+                    "threes": "medium"
+                }
             }
         },
 
@@ -91,7 +127,11 @@ BRAIN_CONFIG = {
                 "defense": "solid structure, drops in bench minutes, vulnerable without Jokic",
                 "pace": "medium",
                 "variance": "low",
-                "shot_profile": {"rim": "medium", "midrange": "medium", "threes": "medium"}
+                "shot_profile": {
+                    "rim": "medium",
+                    "midrange": "medium",
+                    "threes": "medium"
+                }
             }
         },
 
@@ -102,7 +142,11 @@ BRAIN_CONFIG = {
                 "defense": "poor POA, bad vs movement & shooting, weak PnR defense",
                 "pace": "fast",
                 "variance": "high",
-                "shot_profile": {"rim": "high", "midrange": "medium", "threes": "low"}
+                "shot_profile": {
+                    "rim": "high",
+                    "midrange": "medium",
+                    "threes": "low"
+                }
             }
         },
 
@@ -113,15 +157,19 @@ BRAIN_CONFIG = {
                 "defense": "aging switch defenders, inconsistent intensity",
                 "pace": "slow",
                 "variance": "high",
-                "shot_profile": {"rim": "low", "midrange": "high", "threes": "medium"}
+                "shot_profile": {
+                    "rim": "low",
+                    "midrange": "high",
+                    "threes": "medium"
+                }
             }
         }
     },
 
-    # --- Guardrails ---
+    # --- Guardrails / Safety Logic ---
     "guardrails": {
-        "no_low_edge_bets": True,
-        "must_pass_all_filters": True
+        "no_low_edge_bets": True,     # Skip if edge vs line is too small
+        "must_pass_all_filters": True # All filters must greenlight before a bet is allowed
     }
 }
 
