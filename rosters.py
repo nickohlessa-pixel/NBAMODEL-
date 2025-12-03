@@ -129,10 +129,30 @@ ROSTERS = {
         "notes": "User-defined Knicks roster for 2025-26 universe."
     },
 
-    "Heat": {
-        "players": {},
-        "notes": "User will populate Heat roster."
-    },
+    "Miami Heat": {
+    "players": [
+        {"name": "Kel'el Ware", "role": "starter", "notes": "key big man"},
+        {"name": "Davion Mitchell", "role": "starter", "notes": "ball stopping defensive anchor"},
+        {"name": "Pelle Larsson", "role": "bench", "notes": "rotational player"},
+        {"name": "Dru Smith", "role": "bench", "notes": "rotational player"},
+        {"name": "Jaime Jaquez Jr.", "role": "bench", "notes": "key rotational player, 6th man"},
+        {"name": "Simone Fontecchio", "role": "bench", "notes": "rotational player, floor spacing shooter"},
+        {"name": "Andrew Wiggins", "role": "starter", "notes": "veteran leadership"},
+        {"name": "Norman Powell", "role": "starter", "notes": "offensive engine, scoring threat"},
+        {"name": "Nikola Jović", "role": "bench", "notes": "key rotational player"},
+        {"name": "Bam Adebayo", "role": "starter", "notes": "primary offensive weapon"},
+        {"name": "Keshad Johnson", "role": "bench", "notes": ""},
+        {"name": "Tyler Herro", "role": "starter", "notes": "primary offensive weapon"},
+        {"name": "Jahmir Young", "role": "OOR", "notes": "(TW)"},
+        {"name": "Myron Gardner", "role": "OOR", "notes": "(TW)"},
+        {"name": "Kasparas Jakucionis", "role": "OOR", "notes": ""},
+        {"name": "Vladislav Goldin", "role": "OOR", "notes": "(TW)"},
+        {"name": "Terry Rozier", "role": "out", "notes": "Out indefinitely"}
+    ],
+    "injuries": {},
+    "notes": []
+},
+
 
     "Magic": {
         "players": {},
