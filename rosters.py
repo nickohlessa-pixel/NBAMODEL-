@@ -10,7 +10,7 @@
 #
 # This file is the single source of truth for:
 #   - Team rosters
-#   - Player roles (starter / bench / out_of_rotation / injured_out)
+#   - Player roles (starter / bench / out_of_rotation / injured_out / out)
 #   - Notes (injuries, usage, matchups, trends)
 #
 # Future expansion:
@@ -23,34 +23,92 @@
 
 
 ROSTERS = {
-    
+
+    # ==========================================
+    # OKLAHOMA CITY THUNDER (USER CANON)
+    # ==========================================
     "Oklahoma City Thunder": {
-    "players": [
-        {"name": "Shai Gilgeous-Alexander", "role": "starter", "notes": "superstar, MVP, key offensive driver"},
-        {"name": "Ajay Mitchell", "role": "bench", "notes": "key rotational player"},
-        {"name": "Cason Wallace", "role": "bench", "notes": "6th man, key rotational player"},
-        {"name": "Jaylin Williams", "role": "bench", "notes": "key rotational big man"},
-        {"name": "Isaiah Hartenstein", "role": "starter", "notes": "starting center, defensive hinge, rebounding threat"},
-        {"name": "Chet Holmgren", "role": "starter", "notes": "scorer, shot blocker, versatility"},
-        {"name": "Isaiah Joe", "role": "bench", "notes": ""},
-        {"name": "Chris Youngblood", "role": "bench", "notes": "(TW)"},
-        {"name": "Luguentz Dort", "role": "starter", "notes": "elite defender"},
-        {"name": "Alex Caruso", "role": "bench", "notes": "key rotational player, elite defender"},
-        {"name": "Brooks Barnhizer", "role": "OOR", "notes": "(TW)"},
-        {"name": "Branden Carlson", "role": "OOR", "notes": "(TW)"},
-        {"name": "Ousmane Dieng", "role": "bench", "notes": ""},
-        {"name": "Aaron Wiggins", "role": "bench", "notes": "key rotational player"},
-        {"name": "Kenrich Williams", "role": "bench", "notes": ""},
-        {"name": "Jalen Williams", "role": "starter", "notes": "2nd best player on the team, offensive and defensive motor"},
-        {"name": "Nikola Topić", "role": "out", "notes": ""},
-        {"name": "Thomas Sorber", "role": "OOR", "notes": ""}
-    ],
-    "injuries": {},
-    "notes": []
-},
+        "players": {
+            "Shai Gilgeous-Alexander": {
+                "role": "starter",
+                "notes": "PG, 6-6, 195, superstar, MVP, key offensive driver"
+            },
+            "Ajay Mitchell": {
+                "role": "bench",
+                "notes": "SG, 6-4, 190, key rotational player"
+            },
+            "Cason Wallace": {
+                "role": "bench",
+                "notes": "SG, 6-3, 195, 6th man, key rotational player"
+            },
+            "Jaylin Williams": {
+                "role": "bench",
+                "notes": "PF, 6-9, 240, key rotational big man"
+            },
+            "Isaiah Hartenstein": {
+                "role": "starter",
+                "notes": "C, 7-0, 250, starting center, defensive hinge, rebounding threat"
+            },
+            "Chet Holmgren": {
+                "role": "starter",
+                "notes": "PF, 7-1, 208, scorer, shot blocker, versatility"
+            },
+            "Isaiah Joe": {
+                "role": "bench",
+                "notes": "SG, 6-4, 165"
+            },
+            "Chris Youngblood": {
+                "role": "bench",
+                "notes": "SG, 6-4, 221, two-way (TW)"
+            },
+            "Luguentz Dort": {
+                "role": "starter",
+                "notes": "SF, 6-4, 220, elite defender"
+            },
+            "Alex Caruso": {
+                "role": "bench",
+                "notes": "SG, 6-5, 186, key rotational player, elite defender"
+            },
+            "Brooks Barnhizer": {
+                "role": "out_of_rotation",
+                "notes": "SG, 6-5, 230, two-way (TW)"
+            },
+            "Branden Carlson": {
+                "role": "out_of_rotation",
+                "notes": "C, 7-0, 220, two-way (TW)"
+            },
+            "Ousmane Dieng": {
+                "role": "bench",
+                "notes": "C, 6-9, 185"
+            },
+            "Aaron Wiggins": {
+                "role": "bench",
+                "notes": "SG, 6-5, 190, key rotational player"
+            },
+            "Kenrich Williams": {
+                "role": "bench",
+                "notes": "PF, 6-7, 210"
+            },
+            "Jalen Williams": {
+                "role": "starter",
+                "notes": "SG, 6-5, 211, 2nd best player on the team, offensive and defensive motor"
+            },
+            "Nikola Topić": {
+                "role": "out",
+                "notes": "PG, 6-6, 200, OUT"
+            },
+            "Thomas Sorber": {
+                "role": "out_of_rotation",
+                "notes": "C, 6-9, 250"
+            }
+        },
+        "injuries": {},
+        "notes": ""
+    },
 
-
-
+    # ==========================================
+    # KNICKS (USER CANON)
+    # ==========================================
     "Knicks": {
         "players": {
             "Karl-Anthony Towns": {
@@ -126,44 +184,91 @@ ROSTERS = {
                 "notes": "SF, 6-6, 210, two-way wing"
             }
         },
+        "injuries": {},
         "notes": "User-defined Knicks roster for 2025-26 universe."
     },
 
-    "Miami Heat": {
-    "players": [
-        {"name": "Kel'el Ware", "role": "starter", "notes": "key big man"},
-        {"name": "Davion Mitchell", "role": "starter", "notes": "ball stopping defensive anchor"},
-        {"name": "Pelle Larsson", "role": "bench", "notes": "rotational player"},
-        {"name": "Dru Smith", "role": "bench", "notes": "rotational player"},
-        {"name": "Jaime Jaquez Jr.", "role": "bench", "notes": "key rotational player, 6th man"},
-        {"name": "Simone Fontecchio", "role": "bench", "notes": "rotational player, floor spacing shooter"},
-        {"name": "Andrew Wiggins", "role": "starter", "notes": "veteran leadership"},
-        {"name": "Norman Powell", "role": "starter", "notes": "offensive engine, scoring threat"},
-        {"name": "Nikola Jović", "role": "bench", "notes": "key rotational player"},
-        {"name": "Bam Adebayo", "role": "starter", "notes": "primary offensive weapon"},
-        {"name": "Keshad Johnson", "role": "bench", "notes": ""},
-        {"name": "Tyler Herro", "role": "starter", "notes": "primary offensive weapon"},
-        {"name": "Jahmir Young", "role": "OOR", "notes": "(TW)"},
-        {"name": "Myron Gardner", "role": "OOR", "notes": "(TW)"},
-        {"name": "Kasparas Jakucionis", "role": "OOR", "notes": ""},
-        {"name": "Vladislav Goldin", "role": "OOR", "notes": "(TW)"},
-        {"name": "Terry Rozier", "role": "out", "notes": "Out indefinitely"}
-    ],
-    "injuries": {},
-    "notes": []
-},
-
-
-    "Magic": {
-        "players": {},
-        "notes": "User will populate Magic roster."
+    # ==========================================
+    # HEAT (USER CANON)
+    # ==========================================
+    "Heat": {
+        "players": {
+            "Kel'el Ware": {
+                "role": "starter",
+                "notes": "C, 7-0, 230, starter, key big man"
+            },
+            "Davion Mitchell": {
+                "role": "starter",
+                "notes": "PG, 6-0, 202, starter, ball stopping defensive anchor"
+            },
+            "Pelle Larsson": {
+                "role": "bench",
+                "notes": "SG, 6-5, 215, bench, rotational player"
+            },
+            "Dru Smith": {
+                "role": "bench",
+                "notes": "SG, 6-2, 203, bench, rotational player"
+            },
+            "Jaime Jaquez Jr.": {
+                "role": "bench",
+                "notes": "SF, 6-6, 225, bench, key rotational player, 6th man"
+            },
+            "Simone Fontecchio": {
+                "role": "bench",
+                "notes": "SF, 6-7, 209, bench, rotational player, floor spacing shooter"
+            },
+            "Andrew Wiggins": {
+                "role": "starter",
+                "notes": "SF, 6-6, 197, starter, veteran leadership"
+            },
+            "Norman Powell": {
+                "role": "starter",
+                "notes": "SG, 6-3, 215, starter, offensive engine, scoring threat"
+            },
+            "Nikola Jović": {
+                "role": "bench",
+                "notes": "PF, 6-10, 205, bench, key rotational player"
+            },
+            "Bam Adebayo": {
+                "role": "starter",
+                "notes": "C, 6-9, 255, starter, primary offensive weapon"
+            },
+            "Keshad Johnson": {
+                "role": "bench",
+                "notes": "SF, 6-6, 225, bench"
+            },
+            "Tyler Herro": {
+                "role": "starter",
+                "notes": "SG, 6-5, 195, starter, primary offensive weapon"
+            },
+            "Jahmir Young": {
+                "role": "out_of_rotation",
+                "notes": "PG, 6-0, 185, two-way (TW), out of rotation"
+            },
+            "Myron Gardner": {
+                "role": "out_of_rotation",
+                "notes": "SF, 6-5, 220, two-way (TW), out of rotation"
+            },
+            "Kasparas Jakucionis": {
+                "role": "out_of_rotation",
+                "notes": "PG, 6-5, 200, out of rotation"
+            },
+            "Vladislav Goldin": {
+                "role": "out_of_rotation",
+                "notes": "C, 7-0, 250, two-way (TW), out of rotation"
+            },
+            "Terry Rozier": {
+                "role": "out",
+                "notes": "PG, 6-1, 190, out indefinitely"
+            }
+        },
+        "injuries": {},
+        "notes": ""
     },
 
-    "Nuggets": {
-        "players": {},
-        "notes": "User will populate Nuggets roster."
-    },
-
+    # ==========================================
+    # HORNETS (USER CANON)
+    # ==========================================
     "Hornets": {
         "players": {
             "Miles Bridges": {
@@ -239,11 +344,34 @@ ROSTERS = {
                 "notes": "PF, 6-7, 236, born November 30 1998, 6th year, Tennessee, OUT injured"
             }
         },
+        "injuries": {},
         "notes": "User-defined Hornets roster for 2025-26 universe."
     },
 
+    # ==========================================
+    # MAGIC – SHELL (TO BE POPULATED BY USER)
+    # ==========================================
+    "Magic": {
+        "players": {},
+        "injuries": {},
+        "notes": "User will populate Magic roster."
+    },
+
+    # ==========================================
+    # NUGGETS – SHELL (TO BE POPULATED BY USER)
+    # ==========================================
+    "Nuggets": {
+        "players": {},
+        "injuries": {},
+        "notes": "User will populate Nuggets roster."
+    },
+
+    # ==========================================
+    # CLIPPERS – SHELL (TO BE POPULATED BY USER)
+    # ==========================================
     "Clippers": {
         "players": {},
+        "injuries": {},
         "notes": "User will populate Clippers roster."
     }
 }
