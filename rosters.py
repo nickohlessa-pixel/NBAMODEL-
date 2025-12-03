@@ -352,7 +352,28 @@ ROSTERS = {
     # MAGIC – SHELL (TO BE POPULATED BY USER)
     # ==========================================
     "Magic": {
-        "players": {},
+        ""players": [
+    {"name": "Franz Wagner", "role": "starter", "notes": "SF, 6-10, 220, offensive engine"},
+    {"name": "Desmond Bane", "role": "starter", "notes": "SG, 6-6, 215, 3 point floor spacer"},
+    {"name": "Anthony Black", "role": "bench", "notes": "PG, 6-7, 200, 6th man, scorer"},
+    {"name": "Tristan Da Silva", "role": "bench", "notes": "SF, 6-8, 217, key rotational player, glue guy"},
+    {"name": "Tyus Jones", "role": "bench", "notes": "PG, 6-0, 196, backup point guard"},
+    {"name": "Wendell Carter Jr.", "role": "starter", "notes": "C, 6-10, 270, defense, rebounds"},
+    {"name": "Goga Bitadze", "role": "bench", "notes": "C, 6-11, 250, backup center"},
+    {"name": "Jonathan Isaac", "role": "out_of_rotation", "notes": "PF, 6-10, 230"},
+    {"name": "Jalen Suggs", "role": "starter", "notes": "PG, 6-5, 205, defensive anchor"},
+    {"name": "Jett Howard", "role": "bench", "notes": "SF, 6-8, 215"},
+    {"name": "Paolo Banchero", "role": "starter", "notes": "PF, 6-10, 250, elite offensive engine"},
+    {"name": "Noah Penda", "role": "bench", "notes": "SF, 6-7, 215, rotational player"},
+    {"name": "Jase Richardson", "role": "bench", "notes": "SG, 6-1, 180, rotational player"},
+    {"name": "Jamal Cain", "role": "out_of_rotation", "notes": "SF, 6-7, 191, two-way (TW)"},
+    {"name": "Orlando Robinson", "role": "out_of_rotation", "notes": "C, 6-10, 235, two-way (TW)"},
+    {"name": "Moritz Wagner", "role": "out", "notes": "C, 6-11, 245, OUT recovering from ACL surgery"},
+    {"name": "Colin Castleton", "role": "out_of_rotation", "notes": "C, 6-10, 250, two-way (TW)"}
+],
+"injuries": {},
+"notes": "User-defined Magic roster for 2025-26 universe."
+,
         "injuries": {},
         "notes": "User will populate Magic roster."
     },
