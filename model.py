@@ -56,10 +56,21 @@ def normalize_team_name(team: str) -> str:
 
 
 def get_team_config(team: str) -> Dict[str, Any]:
+    """
+    Pull team config from TEAM_CONFIG.
+    If missing, fall back to a neutral config so the model still runs.
+    """
     key = normalize_team_name(team)
     cfg = TEAM_CONFIG.get(key)
     if not cfg:
-        raise ValueError(f"Unknown team config: {team} (normalized: {key})")
+        print(f"[WARN] Unknown team config: {team} (normalized: {key}). Using neutral fallback.")
+        cfg = {
+            "strength": 0.0,
+            "pace": 100.0,
+            "home_edge": 0.0,
+            "offense_strength": 0.0,
+            "defense_strength": 0.0,
+        }
     return cfg
 
 
@@ -103,7 +114,6 @@ def evaluate_injury_risk(team_name: str) -> Dict[str, Any]:
 
     starters_out = sum(1 for p in inactive if roster.get(p, {}).get("role", "").lower() == "starter")
 
-    # NO BET guardrail
     if starters_out >= int(get_setting("no_bet_if_starters_out")):
         return {
             "team": team_name,
@@ -124,11 +134,11 @@ def evaluate_injury_risk(team_name: str) -> Dict[str, Any]:
 
     return {
         "team": team_name,
-        "starters_out": starters_out,
-        "total_out": total_out,
-        "penalty_multiplier": max(0.0, 1.0 - penalty),
-        "no_bet": False,
-        "summary": summary,
+            "starters_out": starters_out,
+            "total_out": total_out,
+            "penalty_multiplier": max(0.0, 1.0 - penalty),
+            "no_bet": False,
+            "summary": summary,
     }
 
 
@@ -142,10 +152,14 @@ def compute_edge(projected: float, market: float) -> float:
 def edge_to_confidence(edge: float) -> str:
     thresholds = get_conf_thresholds()
     x = abs(edge)
-    if x >= thresholds["S"]: return "S"
-    if x >= thresholds["A"]: return "A"
-    if x >= thresholds["B"]: return "B"
-    if x >= thresholds["C"]: return "C"
+    if x >= thresholds["S"]:
+        return "S"
+    if x >= thresholds["A"]:
+        return "A"
+    if x >= thresholds["B"]:
+        return "B"
+    if x >= thresholds["C"]:
+        return "C"
     return "NO BET"
 
 
@@ -167,9 +181,7 @@ def run_matchup(home_team: str, away_team: str, spread_line: float = None, total
 
     min_edge = float(get_setting("min_edge_to_bet"))
 
-    # -------------------------
-    # Spread logic
-    # -------------------------
+    # Spread
     spread_recommend = "NO BET"
     spread_conf = "NO BET"
     spread_edge = None
@@ -186,9 +198,7 @@ def run_matchup(home_team: str, away_team: str, spread_line: float = None, total
                 spread_recommend = f"BET AWAY ({away_team}) ATS"
             spread_conf = edge_to_confidence(spread_edge_adj)
 
-    # -------------------------
-    # Total logic
-    # -------------------------
+    # Total
     total_recommend = "NO BET"
     total_conf = "NO BET"
     total_edge = None
@@ -202,14 +212,11 @@ def run_matchup(home_team: str, away_team: str, spread_line: float = None, total
             total_recommend = "BET OVER" if total_edge_adj > 0 else "BET UNDER"
             total_conf = edge_to_confidence(total_edge_adj)
 
-    # Injury override
     if injury_no_bet:
         spread_recommend = total_recommend = "NO BET (injury chaos)"
         spread_conf = total_conf = "NO BET"
 
-    # -------------------------
     # Print summary
-    # -------------------------
     print("==========================================")
     print(f"MATCHUP: {away_team} @ {home_team}")
     print("==========================================")
