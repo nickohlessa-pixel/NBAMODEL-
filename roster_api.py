@@ -230,6 +230,48 @@ def get_inactive_players(team_name: str):
     return inactive
 
 
+def get_active_players(team_name: str):
+    """
+    Return a list of player names whose status is NOT clearly out.
+
+    For now we treat:
+      - "active" -> included
+      - missing/unknown status -> included
+      - any status containing "out" -> excluded
+    """
+    team = ROSTERS.get(team_name)
+    if not team:
+        return []
+
+    players = team.get("players", {})
+    active = []
+    for name, info in players.items():
+        status = str(info.get("status", "active")).lower()
+        if "out" in status:
+            continue
+        active.append(name)
+    return active
+
+
+def get_inactive_players(team_name: str):
+    """
+    Return a list of player names whose status clearly indicates they are out.
+
+    Any status string containing "out" is treated as inactive here.
+    """
+    team = ROSTERS.get(team_name)
+    if not team:
+        return []
+
+    players = team.get("players", {})
+    inactive = []
+    for name, info in players.items():
+        status = str(info.get("status", "active")).lower()
+        if "out" in status:
+            inactive.append(name)
+    return inactive
+
+
 def get_team_injury_summary(team_name: str) -> dict:
     """
     Lightweight snapshot for the model.
