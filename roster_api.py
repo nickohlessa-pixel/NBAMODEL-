@@ -177,7 +177,6 @@ def get_team_roster(team_name: str) -> dict:
     ensure_team(team_name)
     return ROSTERS[team_name]
 
-
 def list_team_players(team_name: str):
     """
     Convenience helper: return a list of player names for a team.
@@ -186,7 +185,6 @@ def list_team_players(team_name: str):
     team = ROSTERS.get(team_name)
     if not team:
         return []
-
     return list(team.get("players", {}).keys())
 
 
@@ -198,8 +196,6 @@ def get_active_players(team_name: str):
       - "active" -> included
       - missing/unknown status -> included (model can decide how to penalize)
       - any status containing "out" -> excluded
-
-    This keeps the API simple and defers deeper logic to model.py.
     """
     team = ROSTERS.get(team_name)
     if not team:
@@ -222,22 +218,24 @@ def get_inactive_players(team_name: str):
     Any status string containing "out" is treated as inactive here.
     """
     team = ROSTERS.get(team_name)
+    if not team:
+        return []
+
+    players = team.get("players", {})
+    inactive = []
+    for name, info in players.items():
+        status = str(info.get("status", "active")).lower()
+        if "out" in status:
+            inactive.append(name)
+    return inactive
 
 
 def get_team_injury_summary(team_name: str) -> dict:
     """
-    Lightweight snapshot for the model:
-
-    Returns:
-      {
-        "team": <team_name>,
-        "active": [list of active-ish players],
-        "inactive": [list of players marked out/injured_out/...],
-      }
+    Lightweight snapshot for the model.
     """
     return {
         "team": team_name,
         "active": get_active_players(team_name),
         "inactive": get_inactive_players(team_name),
     }
-
