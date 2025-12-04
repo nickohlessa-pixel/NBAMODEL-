@@ -173,4 +173,10 @@ BRAIN_CONFIG = {
     }
 }
 
+# === Compatibility bridge for model.py ===
+TEAM_CONFIG = BRAIN_CONFIG["teams"]
+MODEL_SETTINGS = BRAIN_CONFIG["betting"]
+TEAM_NAME_MAP = BRAIN_CONFIG.get("team_name_map", {})
+
+
 # END OF CONFIG
