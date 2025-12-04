@@ -91,7 +91,7 @@ def get_team_config(team: str) -> Dict[str, Any]:
 # -----------------------------
 # Projections
 # -----------------------------
-def project_spread(home_team: str, away_team: str) -> float:
+def project_total(home_team: str, away_team: str) -> float:
     """
     Project home - away spread (negative means home favored).
     Simple version: strength differential + home advantage.
