@@ -222,3 +222,22 @@ def get_inactive_players(team_name: str):
     Any status string containing "out" is treated as inactive here.
     """
     team = ROSTERS.get(team_name)
+
+
+def get_team_injury_summary(team_name: str) -> dict:
+    """
+    Lightweight snapshot for the model:
+
+    Returns:
+      {
+        "team": <team_name>,
+        "active": [list of active-ish players],
+        "inactive": [list of players marked out/injured_out/...],
+      }
+    """
+    return {
+        "team": team_name,
+        "active": get_active_players(team_name),
+        "inactive": get_inactive_players(team_name),
+    }
+
